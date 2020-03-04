@@ -16,11 +16,16 @@ namespace Lesson_1 // I can write comments on the same line, or make a new one.
             // The parentheses indicate that it's a function. If there were parameters, they would go
             // inside the parentheses
         {
+            Console.ReadLine();
+            // This function does not return until the user hits enter, so the program does not continue until
+            // the user hits enter (everything after this doesn't run until you hit enter)
             Console.WriteLine("I'm still kinda lost but optimistic ✌");
             // Console.WriteLine is a function, and it makes the program write whatever is within the brackets 
             // and quotation marks.
             // System.console is a class, just like Program is a class. Console.WriteLine is a function,
             // just like Main() is a function.
+            Console.ReadLine();
+            // You can do it multiple times, so there are multiple places you have to hit enter to continue
             Console.WriteLine("Getting the hang of this more");
             // To make a new line, you can add a new function (note: you have to add a semicolon after each statement)
             Console.WriteLine("Calculus is hard, \nbut this is also hard");
