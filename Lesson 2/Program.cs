@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections;
 
 namespace Lesson_2
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            string text = "hi blog peeps";
+            Console.WriteLine(text);
         }
     }
 }
