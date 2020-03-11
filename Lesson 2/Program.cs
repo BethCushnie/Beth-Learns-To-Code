@@ -5,30 +5,32 @@ namespace Lesson_2
     class Program
     {
         static void Main()
-        {
-            start:
-            
-            Console.ForegroundColor = ConsoleColor.Green;
+        { 
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Type a number!");
-            string line = Console.ReadLine();
-            bool lineIsValid = int.TryParse(line, out int number);
-
-
-            if (!lineIsValid)
-            {
-                Console.WriteLine("u done f***ed up");
-
-                goto start;
-                // now the program restarts if the input is not valid
-            }
+            int number1 = ReadNumber();
 
             Console.WriteLine("Type another number!");
-            string line2 = Console.ReadLine();
-            int number2 = int.Parse(line2);
+            int number2 = ReadNumber();
 
-            int answer = number + number2;
+            int answer = number1 + number2;
             Console.WriteLine($"The answer is {answer}");
+
+
+            int ReadNumber()
+            {
+                string line = Console.ReadLine();
+                bool lineIsValid = int.TryParse(line, out int number);
+
+                if (!lineIsValid)
+                {
+                    Console.WriteLine("u done f***ed up");
+                    Main();
+                }
+
+                return number;
+            }
         }
     }
 }
