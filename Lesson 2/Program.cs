@@ -7,19 +7,18 @@ namespace Lesson_2
         static void Main()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
-            // This will make the forground (the text) magenta :)
            
             Console.WriteLine("Type a number!");
             string line = Console.ReadLine();
-            int x = int.Parse(line);
-            // line is a string, but x is an integer
-            // int.Parse() is a function that converts a string into an integer
-            // However, if the string isn't a number, then an error will appear
+            int number = int.Parse(line);
+          
             Console.WriteLine("Type another number!");
             string line2 = Console.ReadLine();
-            int y = int.Parse(line2);
-            Console.WriteLine("The sum of your two numbers is");
-            Console.WriteLine(x + y);
+            int number2 = int.Parse(line2);
+
+            int sum = number + number2;
+            Console.WriteLine($"The sum of your two numbers is {sum}");
+            // {sum} doesn't have to be a string
         }
     }
 }
