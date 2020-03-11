@@ -6,7 +6,7 @@ namespace Lesson_2
     {
         static void Main()
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.Cyan;
            
             Console.WriteLine("Type a number!");
             string line = Console.ReadLine();
@@ -16,9 +16,8 @@ namespace Lesson_2
             string line2 = Console.ReadLine();
             int number2 = int.Parse(line2);
 
-            int sum = number + number2;
-            Console.WriteLine($"The sum of your two numbers is {sum}");
-            // {sum} doesn't have to be a string
+            int answer = number - number2;
+            Console.WriteLine($"The answer is {answer}");
         }
     }
 }
