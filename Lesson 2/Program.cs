@@ -6,6 +6,8 @@ namespace Lesson_2
     {
         static void Main()
         {
+            start:
+            
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("Type a number!");
@@ -14,12 +16,12 @@ namespace Lesson_2
 
 
             if (!lineIsValid)
-                // if lineIsValid is false
             {
                 Console.WriteLine("u done f***ed up");
-            }
-            //this doesn't say anything now if the input is valid
 
+                goto start;
+                // now the program restarts if the input is not valid
+            }
 
             Console.WriteLine("Type another number!");
             string line2 = Console.ReadLine();
