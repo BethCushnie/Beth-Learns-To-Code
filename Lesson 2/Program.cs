@@ -6,9 +6,10 @@ namespace Lesson_2
     {
         static void Main()
         {
-            string line = Console.ReadLine();
-            Console.WriteLine($"User entered the following line: {line}");
-                // $ in front of string declaration, which meant that adding curly brackets inserted the variable to the string
+            int x = 10;
+            int y = 20;
+            // int stands for integer
+            Console.WriteLine(x + y);
         }
     }
 }
