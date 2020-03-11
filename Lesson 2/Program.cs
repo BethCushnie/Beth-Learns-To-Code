@@ -29,6 +29,9 @@ namespace Lesson_2
             // Every class in C# must have a method for turning it into a string, so that's why you can put anything inside the 
             // curly brackets and have it read (ex. answer is an integer, but it's read as a string here)
 
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
+
 
             int ReadNumber()
                 // we made our own function called ReadNumber for integers
@@ -48,6 +51,7 @@ namespace Lesson_2
                     // curly brackets is run
                 {
                     Console.WriteLine("u done f***ed up");
+                    Console.WriteLine();
                     // tells you that u done f***ed up
                     Main();
                     // returns you to the beginning of Main (restarts the program)
