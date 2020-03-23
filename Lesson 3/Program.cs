@@ -6,8 +6,7 @@ namespace Lesson_3
     {
         static void Main()
         {
-            WriteLineColor("Enter a number", ConsoleColor.Magenta);
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            WriteLineColor("Enter a number");
             string text = Console.ReadLine();
 
             int number;
@@ -18,19 +17,20 @@ namespace Lesson_3
             {
                 const int goalNumber = 69;
                 int answer = goalNumber - number;
-                WriteLineColor($"Your number is {answer} away from {goalNumber}", ConsoleColor.Magenta);   
+                WriteLineColor($"Your number is {answer} away from {goalNumber}");   
             }
             else
             {
-                WriteLineColor("That's not a number, fool", ConsoleColor.Magenta);
+                WriteLineColor("That's not a number, fool");
             }
 
         }
 
-        static void WriteLineColor(string line, ConsoleColor color)
+        static void WriteLineColor(string line)
         {
-            Console.ForegroundColor = color;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(line);
+            Console.ForegroundColor = ConsoleColor.Cyan;
         }
     }
 }
