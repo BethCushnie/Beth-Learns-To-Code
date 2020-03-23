@@ -6,13 +6,21 @@ namespace Lesson_3
     {
         static void Main()
         {
-            for (int i = 0; i < 10; i++)
-                // This is a While Loop, but better
-                // int i = 0 creates the variable, and assigns it a starting value
-                // i < 10 is the parameters for the lopp to happen
-                // i++ is what happens each time the loop rus again
+            WriteLine("Enter the starting number");
+            string line1 = Console.ReadLine();
+            int number1 = int.Parse(line1);
+
+            WriteLine("Enter the ending number");
+            string line2 = Console.ReadLine();
+            int number2 = int.Parse(line2);
+
+            WriteLine("The numbers between those two numbers are:");
+
+            number1++;
+            while (number1 < number2)
             {
-                WriteLine(i);
+                WriteLine(number1);
+                number1++;
             }
         }
 
