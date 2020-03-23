@@ -6,12 +6,13 @@ namespace Lesson_3
     {
         static void Main()
         {
-            int i = 0;
-
-            while (i < 10) // instead of putting a boolean variable in it, we're putting a boolean value (because it's cleaner)
+            for (int i = 0; i < 10; i++)
+                // This is a While Loop, but better
+                // int i = 0 creates the variable, and assigns it a starting value
+                // i < 10 is the parameters for the lopp to happen
+                // i++ is what happens each time the loop rus again
             {
                 WriteLine(i);
-                i++;
             }
         }
 
