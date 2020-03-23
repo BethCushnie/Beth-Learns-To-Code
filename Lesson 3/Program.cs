@@ -12,8 +12,9 @@ namespace Lesson_3
             {
                 WriteLine(i);
 
-                i += 1; // Is the same as i = i + 1
-                // i -= 1 is the same as i = i - 1
+                i++; // Is the same as i += 1
+                // i-- is the same as i -= 1
+                // These shortcuts are only for adding or subtracting 1
             }
         }
 
