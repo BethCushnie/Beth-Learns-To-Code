@@ -6,27 +6,24 @@ namespace Lesson_3
     {
         static void Main()
         {
-            WriteLineColor("Enter a number");
+            WriteLine("Enter a number");
             string text = Console.ReadLine();
 
-            int number;
-            bool textIsValid;
-            textIsValid = int.TryParse(text, out number);
+            bool textIsValid = int.TryParse(text, out int number);
 
             if (textIsValid)
             {
                 const int goalNumber = 69;
                 int answer = goalNumber - number;
-                WriteLineColor($"Your number is {answer} away from {goalNumber}");   
+                WriteLine($"Your number is {answer} away from {goalNumber}");   
             }
             else
             {
-                WriteLineColor("That's not a number, fool");
+                WriteLine("That's not a number, fool");
             }
-
         }
 
-        static void WriteLineColor(string line)
+        static void WriteLine(string line)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(line);
