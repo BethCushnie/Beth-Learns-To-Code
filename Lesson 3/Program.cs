@@ -6,28 +6,21 @@ namespace Lesson_3
     {
         static void Main()
         {
-            WriteLine("Enter a number");
-            string text = Console.ReadLine();
-
-            bool textIsValid = int.TryParse(text, out int number);
-
-            if (textIsValid)
+            int i = 0;
+            while (i < 5)
             {
-                const int goalNumber = 69;
-                int answer = goalNumber - number;
-                WriteLine($"Your number is {answer} away from {goalNumber}");   
+                WriteLine(i);
             }
-            else
-            {
-                WriteLine("That's not a number, fool");
-            }
+            // Right now, this is an infinite loop. Because i is always < 5, the program just runs a bunch of 0s, forever
         }
 
-        static void WriteLine(string line)
+        static void WriteLine(object line)
+            // Previously, when the variable was a string, this function could only write strings
+            // However, everything in C# is an object, so now WriteLine can be used for anything
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine(line);
             Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(line);
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
