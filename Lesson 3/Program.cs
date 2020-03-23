@@ -7,17 +7,11 @@ namespace Lesson_3
         static void Main()
         {
             int i = 0;
-            bool b = i < 10;
 
-            while (b)
-                // Inside the brackets is a boolean that is either true or false
-                // The code inside will run as long as it is true
-                // Currently, this is an infinite loop because b is outside the loop, so the i value in it never changes,
-                // so b is always true
+            while (i < 10) // instead of putting a boolean variable in it, we're putting a boolean value (because it's cleaner)
             {
                 WriteLine(i);
-
-                i++; 
+                i++;
             }
         }
 
