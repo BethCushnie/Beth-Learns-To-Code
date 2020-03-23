@@ -16,12 +16,9 @@ namespace Lesson_3
 
             WriteLine("The numbers between those two numbers are:");
 
-            number1++;
-            while (number1 < number2)
-            {
-                WriteLine(number1);
-                number1++;
-            }
+            for (int i = number1 + 1; i < number2; i++)
+                WriteLine(i);
+            // fun fact: if you have only 1 statement inside curly brackets, you can get rid of the curly brackets
         }
 
         static void WriteLine(object line)
