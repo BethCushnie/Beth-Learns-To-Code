@@ -20,7 +20,8 @@ namespace Lesson_4
                 answer += enteredNumber;
             }
 
-            Print($"The sum of these numbers is {answer}");
+
+            Print($"The inverse of the sum of these numbers is {InverseNumber(answer)}");
 
             Print("\nPress any key to exit");
             Console.ReadKey();
@@ -44,5 +45,24 @@ namespace Lesson_4
             Print("We're pretending you entered 0");
             return 0;
         }
+
+        static int SquareNumber(int number)
+        {
+            return number * number;
+        }
+
+        static int InverseNumber(int number)
+        {
+            return -number;
+        }
+
+        static int InverseSqure(int number)
+        {
+            number = SquareNumber(number);
+            number = InverseNumber(number);
+            return number;
+        }
+        // Code within functions exists in isolation. So I can't use the variable answer here because it doesn't exist in this function
+        // Hence the use of number
     }
 }
