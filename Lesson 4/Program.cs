@@ -6,17 +6,10 @@ namespace Lesson_4
     {
         static void Main()
         {
-            Print("How many Fibonacci numbers do you want?");
-            int numbersToPrint = GetNumberFromUser();
+            Print("What Fibonacci number do you want?");
+            int numberToPrint = GetNumberFromUser();
 
-            int a = 0, b = 1;
-
-            for (int i = 0; i < numbersToPrint; i++)
-            {
-                Print(a + b);
-                b += a;
-                a = b - a;
-            }
+            Print($"The {numberToPrint}th fibonacci number is {GetFibonacciNumber(numberToPrint)}");
         }
 
         static void Print(object obj)
@@ -36,6 +29,25 @@ namespace Lesson_4
             Print("That ain't a number brah");
             Print("We're pretending you entered 0");
             return 0;
+        }
+
+        static int GetFibonacciNumber(int index)
+        {
+            int a = 0, b = 1;
+
+            // use = to assign values, == for equality (in the same genre of <,>, etc)
+            if (index == 0)
+                return 0;
+
+            if (index == 1)
+                return 1;
+
+            for (int i = 0; i < index - 2; i++)
+            {
+                b = a + b;
+                a = b - a;
+            }
+            return b;
         }
     }
 }
