@@ -12,15 +12,13 @@ namespace Lesson_4
 
             int i = 0;
             int answer = 0;
-            int previousAnswer = 0;
 
             while (i < numberOfNumbers)
             {
                 Console.WriteLine("Enter a number");
                 int enteredNumber = int.Parse(Console.ReadLine());
 
-                previousAnswer = answer;
-                answer = previousAnswer + enteredNumber;
+                answer += enteredNumber;
 
                 i++;
             }
@@ -28,8 +26,6 @@ namespace Lesson_4
 
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
-            // for prettier screenshots -- program now waits until all the crap at the end comes up
-            // can also just do Console.ReadLine();
         }
     }
 }
