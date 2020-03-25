@@ -6,27 +6,24 @@ namespace Lesson_4
     {
         static void Main()
         {
-            Print("How many numbers are you going to enter?");
+            Print("How many Fibonacci numbers do you want?");
+            int numbersToPrint = GetNumberFromUser();
 
-            int numberOfNumbers = GetNumberFromUser();
+            ulong previousAnswer = 0;
+            ulong answer = 1;
 
-            int answer = 0;
+            Print("0");
+            Print("1");
+            Print("1");
 
-            for (int i = 0; i < numberOfNumbers; i++)
+            for (int i = 0; i < numbersToPrint - 3; i++)
             {
-                Print("Enter a number");
-                int enteredNumber = GetNumberFromUser();
-
-                answer += enteredNumber;
+                previousAnswer = answer - previousAnswer;
+                answer = answer + previousAnswer;
+                Print(answer);
             }
-
-
-            Print($"The inverse of the sum of these numbers is {InverseNumber(answer)}");
-
-            Print("\nPress any key to exit");
-            Console.ReadKey();
         }
-        
+
         static void Print(object obj)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -40,29 +37,10 @@ namespace Lesson_4
 
             if (numberIsGood)
                 return enteredNumber;
-            
+
             Print("That ain't a number brah");
             Print("We're pretending you entered 0");
             return 0;
         }
-
-        static int SquareNumber(int number)
-        {
-            return number * number;
-        }
-
-        static int InverseNumber(int number)
-        {
-            return -number;
-        }
-
-        static int InverseSqure(int number)
-        {
-            number = SquareNumber(number);
-            number = InverseNumber(number);
-            return number;
-        }
-        // Code within functions exists in isolation. So I can't use the variable answer here because it doesn't exist in this function
-        // Hence the use of number
     }
 }
