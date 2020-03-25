@@ -25,6 +25,11 @@ namespace Lesson_4
                 i++;
             }
             Console.WriteLine($"The sum of these numbers is {answer}");
+
+            Console.WriteLine("\nPress any key to exit");
+            Console.ReadKey();
+            // for prettier screenshots -- program now waits until all the crap at the end comes up
+            // can also just do Console.ReadLine();
         }
     }
 }
