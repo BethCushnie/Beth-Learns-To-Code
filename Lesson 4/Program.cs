@@ -6,10 +6,14 @@ namespace Lesson_4
     {
         static void Main()
         {
-            Print("What Fibonacci number do you want?");
-            int numberToPrint = GetNumberFromUser();
+            while (true)
+            {
+                Print("What Fibonacci number do you want?");
+                int numberToPrint = GetNumberFromUser();
 
-            Print($"The {numberToPrint}th fibonacci number is {GetFibonacciNumber(numberToPrint)}");
+                Print($"The {numberToPrint}th fibonacci number is {GetFibonacciNumber(numberToPrint)}");
+            }
+           
         }
 
         static void Print(object obj)
@@ -35,7 +39,6 @@ namespace Lesson_4
         {
             int a = 0, b = 1;
 
-            // use = to assign values, == for equality (in the same genre of <,>, etc)
             if (index == 0)
                 return 0;
 
