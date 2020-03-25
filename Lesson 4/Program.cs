@@ -10,18 +10,16 @@ namespace Lesson_4
 
             int numberOfNumbers = int.Parse(Console.ReadLine());
 
-            int i = 0;
             int answer = 0;
 
-            while (i < numberOfNumbers)
+            for (int i = 0; i < numberOfNumbers; i++)
             {
                 Console.WriteLine("Enter a number");
                 int enteredNumber = int.Parse(Console.ReadLine());
 
                 answer += enteredNumber;
-
-                i++;
             }
+
             Console.WriteLine($"The sum of these numbers is {answer}");
 
             Console.WriteLine("\nPress any key to exit");
