@@ -9,18 +9,13 @@ namespace Lesson_4
             Print("How many Fibonacci numbers do you want?");
             int numbersToPrint = GetNumberFromUser();
 
-            ulong previousAnswer = 0;
-            ulong answer = 1;
+            int a = 0, b = 1;
 
-            Print("0");
-            Print("1");
-            Print("1");
-
-            for (int i = 0; i < numbersToPrint - 3; i++)
+            for (int i = 0; i < numbersToPrint; i++)
             {
-                previousAnswer = answer - previousAnswer;
-                answer = answer + previousAnswer;
-                Print(answer);
+                Print(a + b);
+                b += a;
+                a = b - a;
             }
         }
 
