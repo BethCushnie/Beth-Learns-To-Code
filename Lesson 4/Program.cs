@@ -11,9 +11,8 @@ namespace Lesson_4
                 Print("What Fibonacci number do you want?");
                 int numberToPrint = GetNumberFromUser();
 
-                Print($"The {numberToPrint}th fibonacci number is {GetFibonacciNumber(numberToPrint)}");
+                Print($"The {GetOrdinalString(numberToPrint)} fibonacci number is {GetFibonacciNumber(numberToPrint)}");
             }
-           
         }
 
         static void Print(object obj)
@@ -51,6 +50,39 @@ namespace Lesson_4
                 a = b - a;
             }
             return b;
+        }
+
+        static string GetOrdinalString(int number)
+        {
+            string suffix = "th";
+
+            int absoluteValue = GetAbsoluteValue(number);
+            if (absoluteValue < 4 || absoluteValue > 13) // Exclude the early 10s because we use 'th' for 11th, 12th, and 13th
+            {
+                char lastCharacter = GetLastCharacter(number.ToString());
+
+                if (lastCharacter == '1')
+                    suffix = "st";
+                else if (lastCharacter == '2')
+                    suffix = "nd";
+                else if (lastCharacter == '3')
+                    suffix = "rd";
+            }
+
+            return $"{number}{suffix}";
+        }
+
+        static int GetAbsoluteValue(int number)
+        {
+            if (number < 0)
+                return -number;
+
+            return number;
+        }
+
+        static char GetLastCharacter(string text)
+        {
+            return text[text.Length - 1];
         }
     }
 }
