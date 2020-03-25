@@ -6,24 +6,43 @@ namespace Lesson_4
     {
         static void Main()
         {
-            Console.WriteLine("How many numbers are you going to enter?");
+            Print("How many numbers are you going to enter?");
 
-            int numberOfNumbers = int.Parse(Console.ReadLine());
+            int numberOfNumbers = GetNumberFromUser();
 
             int answer = 0;
 
             for (int i = 0; i < numberOfNumbers; i++)
             {
-                Console.WriteLine("Enter a number");
-                int enteredNumber = int.Parse(Console.ReadLine());
+                Print("Enter a number");
+                int enteredNumber = GetNumberFromUser();
 
                 answer += enteredNumber;
             }
 
-            Console.WriteLine($"The sum of these numbers is {answer}");
+            Print($"The sum of these numbers is {answer}");
 
-            Console.WriteLine("\nPress any key to exit");
+            Print("\nPress any key to exit");
             Console.ReadKey();
+        }
+        
+        static void Print(object obj)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(obj);
+        }
+
+        static int GetNumberFromUser()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            bool numberIsGood = int.TryParse(Console.ReadLine(), out int enteredNumber);
+
+            if (numberIsGood)
+                return enteredNumber;
+            
+            Print("That ain't a number brah");
+            Print("We're pretending you entered 0");
+            return 0;
         }
     }
 }
