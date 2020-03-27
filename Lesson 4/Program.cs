@@ -41,9 +41,6 @@ namespace Lesson_4
             if (index == 0)
                 return 0;
 
-            if (index == 1)
-                return 1;
-
             for (int i = 0; i < index - 2; i++)
             {
                 b = a + b;
