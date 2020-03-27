@@ -38,12 +38,6 @@ namespace Lesson_5
         }
 
 
-
-
-
-
-
-
         static void Print(object obj)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
