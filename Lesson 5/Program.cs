@@ -6,9 +6,43 @@ namespace Lesson_5
     {
         static void Main()
         {
-            Console.WriteLine("How many prime numbers do you want?");
-            int numberOfPrimes = GetNumberFromUser();
+            Print("Up to what number do you want prime?");
+            int maxPrime = GetNumberFromUser();
+
+            for (int i = 1; i <= maxPrime; i++)
+            {
+                if (IsPrime(i))
+                    Print(i);
+            }
         }
+
+        static bool IsPrime(int number)
+        {
+            for (int i = 2; i < number; i++)
+            {
+                if (IsEvenlyDivisibleBy(number, i))
+                    return false;
+            }
+
+            return true;
+        }
+
+        static bool IsEvenlyDivisibleBy(int dividend, int divisor)
+        {
+            int remainder = dividend % divisor;
+            
+            if (remainder == 0)
+                return true;
+
+            return false;
+        }
+
+
+
+
+
+
+
 
         static void Print(object obj)
         {
@@ -29,5 +63,6 @@ namespace Lesson_5
             return 0;
 
         }
+
     }
 }
