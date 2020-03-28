@@ -16,12 +16,15 @@ namespace Lesson_6
         }
 
         static int PowerOf2(int exponent)
+            => Power(2, exponent);
+
+        static int Power(int @base, int exponent)
         {
             int answer = 1;
-            
+
             for (int i = 0; i < exponent; i++)
-                answer *= 2;
-            
+                answer *= @base;
+
             return answer;
         }
 
