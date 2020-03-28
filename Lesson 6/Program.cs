@@ -6,17 +6,17 @@ namespace Lesson_6
     {
         static void Main()
         {
-            Print("How many powers of two do you want?");
-            int numberOfPowers = GetNumberFromUser();
+            Print("Enter a base.");
+            int @base = GetNumberFromUser();
 
-            for (int i = 1; i <= numberOfPowers; i++)
+            Print("Enter the maximum exponent.");
+            int exponent = GetNumberFromUser();
+
+            for (int i = 1; i <= exponent; i++)
             {
-                Print($"2^{i} is {PowerOf2(i)}");
+                Print($"{@base}^{i} is {Power(@base, i)}");
             }
         }
-
-        static int PowerOf2(int exponent)
-            => Power(2, exponent);
 
         static int Power(int @base, int exponent)
         {
