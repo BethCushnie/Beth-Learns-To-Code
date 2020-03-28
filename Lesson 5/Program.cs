@@ -30,11 +30,8 @@ namespace Lesson_5
         static bool IsEvenlyDivisibleBy(int dividend, int divisor)
         {
             int remainder = dividend % divisor;
-            
-            if (remainder == 0)
-                return true;
 
-            return false;
+            return remainder == 0;
         }
 
 
