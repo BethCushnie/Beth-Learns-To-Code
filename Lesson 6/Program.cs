@@ -15,10 +15,8 @@ namespace Lesson_6
             }
         }
 
-        static int SquareOf(int number)
-        {
-            return number * number;
-        }
+        static int SquareOf(int number) 
+            => number * number;
 
         static int GetNumberFromUser()
         {
