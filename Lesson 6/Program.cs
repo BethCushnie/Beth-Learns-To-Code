@@ -11,17 +11,17 @@ namespace Lesson_6
 
             for (int i = 1; i <= numberOfPowers; i++)
             {
-                Print($"2^{i} is {PowerOf(i)}");
+                Print($"2^{i} is {PowerOf2(i)}");
             }
         }
 
-        static int PowerOf(int number)
+        static int PowerOf2(int exponent)
         {
             int answer = 1;
-            for (int i = 0; i < number; i++)
-            {
-                answer = answer * 2;
-            }
+            
+            for (int i = 0; i < exponent; i++)
+                answer *= 2;
+            
             return answer;
         }
 
