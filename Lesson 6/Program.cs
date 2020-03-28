@@ -6,17 +6,24 @@ namespace Lesson_6
     {
         static void Main()
         {
-            Print("How many squares do you want?");
-            int numberOfSquares = GetNumberFromUser();
+            Print("How many powers of two do you want?");
+            int numberOfPowers = GetNumberFromUser();
 
-            for (int i = 1; i <= numberOfSquares; i++)
+            for (int i = 1; i <= numberOfPowers; i++)
             {
-                Print($"The square of {i} is {SquareOf(i)}");
+                Print($"2^{i} is {PowerOf(i)}");
             }
         }
 
-        static int SquareOf(int number) 
-            => number * number;
+        static int PowerOf(int number)
+        {
+            int answer = 1;
+            for (int i = 0; i < number; i++)
+            {
+                answer = answer * 2;
+            }
+            return answer;
+        }
 
         static int GetNumberFromUser()
         {
