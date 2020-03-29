@@ -6,32 +6,49 @@ namespace Lesson_6
     {
         static void Main()
         {
-            Print("Enter a base.");
-            int @base = GetNumberFromUser();
+            Print("Up to what power of 2 do you want mersenne primes?");
+            ulong maxPower = GetNumberFromUser();
 
-            Print("Enter the maximum exponent.");
-            int exponent = GetNumberFromUser();
-
-            for (int i = 1; i <= exponent; i++)
+            for (ulong i = 0; i < maxPower; i++)
             {
-                Print($"{@base}^{i} is {Power(@base, i)}");
+                ulong mersenneNumber = TwoToThePowerOf(i) - 1;
+
+                if (IsPrime(mersenneNumber))
+                    Print(mersenneNumber);
             }
         }
 
-        static int Power(int @base, int exponent)
+        static bool IsPrime(ulong number)
         {
-            int answer = 1;
+            for (ulong i = 2; i < number; i++)
+            {
+                if (IsEvenlyDivisibleBy(number, i))
+                    return false;
+            }
 
-            for (int i = 0; i < exponent; i++)
-                answer *= @base;
-
-            return answer;
+            return true;
         }
 
-        static int GetNumberFromUser()
+        static bool IsEvenlyDivisibleBy(ulong dividend, ulong divisor)
+        {
+            ulong remainder = dividend % divisor;
+            return remainder == 0;
+        }
+
+        static ulong TwoToThePowerOf(ulong exponent)
+        {
+            ulong power = 1;
+
+            for (ulong i = 0; i < exponent; i++)
+                power *= 2;
+
+            return power;
+        }
+
+        static ulong GetNumberFromUser()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            bool numberIsTrue = int.TryParse(Console.ReadLine(), out int enteredNumber);
+            bool numberIsTrue = ulong.TryParse(Console.ReadLine(), out ulong enteredNumber);
             
             if (numberIsTrue)
                 return enteredNumber;
